@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :locations
   resources :user_hangouts
   resources :hangouts
-  resources :users
-  get "/register", to: "users#new", as: :register
+  get "/register", to: "users#new"
+  resources :users, except: [:new] 
 end
