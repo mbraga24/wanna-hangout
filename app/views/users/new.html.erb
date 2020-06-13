@@ -1,3 +1,24 @@
 <h1 style="text-align: center; color:red; font-size:46px;">Register Page</h1>
 
 <h4 style="text-align: center; color:blue; font-size:46px;">POSSIBLY A POP UP!</h4>
+
+<div style="width: 250px; margin: 50px auto; border: 2px solid blue">
+  <%= form_for(@user) do |f| %>
+    <%= f.label :username %><br>
+    <%= f.text_field :username, placeholder: "Enter username" %><br>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, placeholder: "Enter first Name" %><br>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name, placeholder: "Enter last Name" %><br>
+    <%= f.label :age, "How old are you?" %><br>
+    <%= f.text_field :age, style: 'width:50px;' %><br>
+    <%= f.label :bio %><br>
+    <%= f.text_area :bio, :rows => 10, style: 'width:100%;', placeholder: "Tell others about you..." %><br>
+    <%= f.label :interests %><br>
+    <%= f.select(:interests, @hobbies.collect {|h| [ h ] }, { :prompt => "Please select"}, { :multiple => true, :size => 6 }) %>
+    <br><br>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+<%# https://stackoverflow.com/questions/18074710/select-multiple-options-in-a-collection-select-rails %>
