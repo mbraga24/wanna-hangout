@@ -17,8 +17,6 @@
     <%= f.label :interests %><br>
     <%= f.select(:interests, @hobbies.collect {|h| [ h ] }, { :prompt => "Please select"}, { :multiple => true, :size => 6 }) %>
     <br><br>
-    <%= f.submit %>
+    <%= f.submit "Register" %>
   <% end %>
 </div>
-
-<%# https://stackoverflow.com/questions/18074710/select-multiple-options-in-a-collection-select-rails %>
