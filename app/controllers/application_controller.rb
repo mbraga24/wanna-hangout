@@ -13,6 +13,13 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
+
+
+
+
+
+
+
   def require_user
     if !logged_in?
       redirect_to home_path

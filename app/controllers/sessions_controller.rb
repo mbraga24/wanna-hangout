@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     # byebug
     # params[:session] => <ActionController::Parameters {"username"=>"sk"} permitted: false>
     # params[:session][:username] => sk
+    
     user = User.find_by(username: params[:session][:username].downcase)
     if user
       # byebug
