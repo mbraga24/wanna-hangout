@@ -14,6 +14,12 @@
     <%= f.text_field :age, style: 'width:50px;' %><br>
     <%= f.label :bio %><br>
     <%= f.text_area :bio, :rows => 10, style: 'width:98%;', placeholder: "Tell others about you..." %><br>
+    <%= f.collection_check_boxes :interest_ids, Interest.all, :id, :name do |b| %>
+      <div class="collection-check-box">
+        <%= b.check_box %>
+        <%= b.label %>
+      </div>
+    <% end %>
     <br><br>
     <%= f.submit "Register" %>
   <% end %>

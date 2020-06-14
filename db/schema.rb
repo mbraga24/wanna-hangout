@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_12_203351) do
+ActiveRecord::Schema.define(version: 2020_06_14_181710) do
 
   create_table "hangouts", force: :cascade do |t|
     t.string "nickname"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2020_06_12_203351) do
     t.integer "location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "interests", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "interests_users", id: false, force: :cascade do |t|
+    t.integer "interest_id", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "locations", force: :cascade do |t|
@@ -42,7 +53,6 @@ ActiveRecord::Schema.define(version: 2020_06_12_203351) do
     t.string "last_name"
     t.integer "age"
     t.text "bio"
-    t.string "interests"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

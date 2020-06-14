@@ -3,8 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    # params[:session] => <ActionController::Parameters {"username"=>"sk"} permitted: false>
-    # params[:session][:username] => sk
     user = User.find_by(username: params[:session][:username].downcase)
     if user
       session[:user_id] = user.id
