@@ -1,12 +1,12 @@
 <div>
   <p>
     <%= link_to "HOME", home_path %> | 
-    <%= link_to "SHOW USERS", users_path %> | 
       <% if logged_in? %>
-        <%= link_to "LOGOUT", logout_path, method: :delete %> | </p>
+      <%= link_to "SHOW USERS", users_path %> | 
+        <%= link_to "LOGOUT", logout_path, method: :delete %> </p>
       <% else %>
-        <%= link_to "LOGIN", login_path %> |
-        <%= link_to "REGISTER", register_path %>
+        <%= link_to "REGISTER", register_path %> |
+        <%= link_to "LOGIN", login_path %> 
       <% end %>
   </p>
 </div>

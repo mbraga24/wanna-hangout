@@ -5,18 +5,20 @@ class UsersController < ApplicationController
 
   def new
     @age_choice = (18..70).to_a
-    @hobbies = ['3D printing', 'Amateur radio', 'Scrapbook', 'Amateur radio', 'Acting', 'Baton twirling', 'Board games', 'Book restoration', 'Cabaret'];
     @user = User.new
   end
 
   def create
     user = User.new(user_params)
-    # User will be logedin upon creation
-    session[:user_id] = user.id
 
+    # user.save will save the user if it passes all validations on User model.
     if user.save
+      # User will be logedin upon creation,
+      session[:user_id] = user.id
       redirect_to user_path(user)    
-    end
+    else
+      render :new
+    end 
   end
 
   private
