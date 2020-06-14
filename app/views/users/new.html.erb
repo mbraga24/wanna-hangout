@@ -13,9 +13,7 @@
     <%= f.label :age, "How old are you?" %><br>
     <%= f.text_field :age, style: 'width:50px;' %><br>
     <%= f.label :bio %><br>
-    <%= f.text_area :bio, :rows => 10, style: 'width:100%;', placeholder: "Tell others about you..." %><br>
-    <%= f.label :interests %><br>
-    <%= f.select(:interests, @hobbies.collect {|h| [ h ] }, { :prompt => "Please select"}, { :multiple => true, :size => 6 }) %>
+    <%= f.text_area :bio, :rows => 10, style: 'width:98%;', placeholder: "Tell others about you..." %><br>
     <br><br>
     <%= f.submit "Register" %>
   <% end %>

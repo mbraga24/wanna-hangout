@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def show
     @user = User.find(params[:id])
   end
@@ -11,16 +10,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    user = User.create(user_params)
 
-    if @user.valid?
-      redirect_to user_path(@user)
+    if user
+      redirect_to user_path(user)
     end
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :age, :bio, :interests)
+    params.require(:user).permit(:username, :first_name, :last_name, :age, :bio)
   end
 end
