@@ -6,6 +6,11 @@
   <%= form_for(@user) do |f| %>
     <%= f.label :username %><br>
     <%= f.text_field :username, placeholder: "Enter username" %><br>
+    <%= f.label :password %><br>
+    <%= f.password_field :password, placeholder: "Enter password" %><br>
+    <%= f.label "Password Confirmation" %><br>
+    <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
+    <hr>
     <%= f.label :first_name %><br>
     <%= f.text_field :first_name, placeholder: "Enter first Name" %><br>
     <%= f.label :last_name %><br>

@@ -10,11 +10,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create(user_params)
+    user = User.new(user_params)
     # User will be logedin upon creation
     session[:user_id] = user.id
 
-    if user
+    if user.save
       redirect_to user_path(user)    
     end
   end
@@ -22,6 +22,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :first_name, :last_name, :age, :bio, interest_ids:[])
+    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :age, :bio, interest_ids:[])
   end
 end
