@@ -1,7 +1,7 @@
 <h1> Welcome, <%= @user.username %>!</h1>
 <ul>
-<% @user.interests.each do |interest| %>
-  <li><%= interest.name %></li>
-<% end %>
+  <% @user.user_interests.each do |interest|%>
+    <li> <%= interest %> </li>
+  <% end %>
 </ul>
 <%= @user.inspect %>

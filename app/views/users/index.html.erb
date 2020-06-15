@@ -3,3 +3,9 @@
   <h4>This page will only show up for <span> loged in users </span> and upon confirmation that the user</h4>
   <h4>wants to date someone or hangout with others.</h4>
 </div>
+
+<ul>
+  <% @users.each do |user| %>
+    <li> <%= link_to user.username, user_path(user) %> </li>
+  <% end %>
+</ul>
