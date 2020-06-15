@@ -40,6 +40,8 @@ senada.interests << calligraphy
 senada.interests << candle_making
 
 marcos.interests << candle_making
+marcos.interests << calligraphy
+marcos.interests << cabaret
 marcos.interests << board_games
 marcos.interests << baton_twirling
 
