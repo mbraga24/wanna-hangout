@@ -8,8 +8,6 @@ UserHangout.destroy_all
 #   Interest.create(name: interest)
 # end
 
-# cities = ["New York", "Boston", "LA", "Washinton DC", "Miami", "Dallas"]
-
 new_york = Location.create(city: "New York")
 boston = Location.create(city: "Boston")
 la = Location.create(city: "LA")

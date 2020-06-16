@@ -11,11 +11,8 @@ class UserHangoutsController < ApplicationController
   def create
     location_type = ["Restaurant", "Park", "Movie theater", "Museum", "Roof Top", "Club", "Pub", "Church"]
     user = User.find_by(id: params[:user_hangout][:user_id])
-    # does_hangout_exist = UserHangout.find(user_id: user.id)
 
-    
     if UserHangout.find_by(user_id: user.id) == nil
-
       set_hangout = Hangout.create(activity: location_type.sample, location_id: user.location_id)
       UserHangout.create(user_id: current_user.id, hangout_id: set_hangout.id)
       UserHangout.create(user_id: user.id, hangout_id: set_hangout.id)

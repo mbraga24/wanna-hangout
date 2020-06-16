@@ -62,16 +62,5 @@ class User < ApplicationRecord
   def find_match
     user_match = User.find_by(id: self.id)
   end
-
-  # This method will run once the user selects the match
-  def some_other_method
-    location_type = ["Restaurant", "Park", "Movie theater", "Museum", "Roof Top", "Club", "Pub", "Church"]
-    
-    match_city_instance = Location.where(city: current_user.city)
-
-    set_hangout = Hangout.create(activity: location_type.sample, location_id: match_city_instance[0].id)
-
-    UserHangout.create(user_id: user_match.id, hangout_id: set_hangout.id, accepted: true)
-    UserHangout.create(user_id: current_user.id, hangout_id: set_hangout.id, accepted: false)
-  end
+  
 end 
