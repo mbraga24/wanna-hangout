@@ -1,3 +1,39 @@
+<ul>
+    <% current_user.match.each do |user| %>
+      <%= form_for(user) do |f| %> 
+        <%= f.collection_check_boxes do |b| %>
+          <div class="collection-check-box" id="">
+            <li><%= user.find_your_match.username %></li>
+            <li><%= user.find_your_match.age %></li>
+            <li><%= user.find_your_match.city %></li>
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+          <hr>
+        <% end %>
+      <% end %>
+    <% end %>
+</ul>
+
+<ul>
+    <% current_user.match.each do |user| %>
+      <div>
+        <li><%= user.create_hangout.username %></li>
+        <li><%= user.create_hangout.age %></li>
+        <li><%= user.create_hangout.city %></li>
+        <hr>
+      </div>
+    <% end %>
+</ul>
+
+<% current_user.match.each do |user| %>
+  <div> 
+    <% user.create_hangout(current_user) %>
+    <hr>
+  </div>
+<% end %>
+
+
 interests = [
   '3D printing',
   'Amateur radio',

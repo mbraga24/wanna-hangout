@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @hangout = Hangout.new
   end
 
   def show
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
     if user.save
       # User will be logedin upon creation,
       session[:user_id] = user.id
-      redirect_to user_path(user)    
+      redirect_to user_path(user)
     else
       render :new
     end 
@@ -28,6 +29,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :age, :bio, interest_ids:[])
+    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :city, :age, :bio, interest_ids:[])
   end
 end

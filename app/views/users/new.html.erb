@@ -17,6 +17,8 @@
     <%= f.text_field :last_name, placeholder: "Enter last Name" %><br>
     <%= f.label :age, "How old are you?" %><br>
     <%= f.text_field :age, style: 'width:50px;' %><br>
+    <%= f.label :location %><br>
+    <%= f.collection_select(:location_id, Location.all, :id, :city, {:prompt => "City"}) %><br>
     <%= f.label :bio %><br>
     <%= f.text_area :bio, :rows => 10, style: 'width:98%;', placeholder: "Tell others about you..." %><br><br>
     <%= f.label "What are your favorite things to do?" %><br><br>

@@ -1,0 +1,18 @@
+<h4>Your Matches are!</h4>
+
+<ul style="text-align: center; list-style: none;">
+  <% current_user.match.each do |user| %>
+    <div style="margin: 50px 50px;">
+      <li>Username: <%= user.create_hangout.username %></li>
+      <li>Age: <%= user.create_hangout.age %></li>
+      <li>City: <%= user.create_hangout.location.city %></li>
+    </div>
+    <hr>
+  <% end %>
+
+  <%= form_for(@userhangout) do |f| %>
+    <%= f.label :user_id, "Pick a match!" %><br><br>
+    <%= f.collection_select(:user_id, current_user.match, :id, :username) %><br><br>
+    <%= f.submit "Choose Match" %>
+  <% end %>
+</ul>
