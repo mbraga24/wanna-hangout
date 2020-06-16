@@ -1,0 +1,8 @@
+<% current_user.match.each do |user| %>
+  <div style="margin: 50px 50px;">
+    <li>Username: <%= user.find_match.username %></li>
+    <li>Age: <%= user.find_match.age %></li>
+    <li>City: <%= user.find_match.location.city %></li>
+  </div>
+  <hr>
+<% end %>

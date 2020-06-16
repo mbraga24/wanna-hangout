@@ -68,9 +68,9 @@ marcos.interests << board_games
 marcos.interests << baton_twirling
 
 # MICHELLE FROM LA
-marcos.interests << candle_making
-marcos.interests << amateur_radio
-marcos.interests << acting
+michelle.interests << candle_making
+michelle.interests << amateur_radio
+michelle.interests << calligraphy
 
 puts "======="
 puts "SEEDED"

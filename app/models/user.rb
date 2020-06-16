@@ -59,11 +59,9 @@ class User < ApplicationRecord
   end
 
   # The find_your_match method will find the given user id in the database.
-  def create_hangout
+  def find_match
     user_match = User.find_by(id: self.id)
   end
-
-
 
   # This method will run once the user selects the match
   def some_other_method
