@@ -1,1 +1,7 @@
 @import "bootstrap/dist/css/bootstrap";
+
+.column-count-2 {
+  -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  -moz-column-count: 2; /* Firefox */
+  column-count: 2;
+}
