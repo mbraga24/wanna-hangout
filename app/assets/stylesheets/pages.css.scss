@@ -1,0 +1,33 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/dist/css/bootstrap";
+
+.footer {
+  margin-top: 45px;
+  padding-top: 10px;
+  border-top: 1px solid #f5e3e3;
+  color: #ff0000;
+}
+
+.footer:hover {
+  color: #2c2b2b
+}
+
+.footer small {
+  float: left
+}
+
+.footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+.jumbotron {
+  background-image: asset-url("Photo-by-Katie-Treadway-on-Unsplash.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5em inherit;
+  min-height: 500px;
+}

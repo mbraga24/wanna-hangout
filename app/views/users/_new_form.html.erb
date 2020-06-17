@@ -1,0 +1,40 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+  <div class="modal-body">
+    <%= form_for(User.new) do |f| %>
+      <%= f.label :username %><br>
+      <%= f.text_field :username, placeholder: "Enter username" %><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, placeholder: "Enter password" %><br>
+      <%= f.label "Password Confirmation" %><br>
+      <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br><br>
+      <hr><br>
+      <%= f.label :first_name %><br>
+      <%= f.text_field :first_name, placeholder: "Enter first Name" %><br>
+      <%= f.label :last_name %><br>
+      <%= f.text_field :last_name, placeholder: "Enter last Name" %><br>
+      <%= f.label :age, "How old are you?" %><br>
+      <%= f.text_field :age, style: 'width:50px;' %><br>
+      <%= f.label :location %><br>
+      <%= f.collection_select(:location_id, Location.all, :id, :city, {:prompt => "City"}) %><br>
+      <%= f.label :bio %><br>
+      <%= f.text_area :bio, :rows => 10, style: 'width:98%;', placeholder: "Tell others about you..." %><br><br>
+      <%= f.label "What are your favorite things to do?" %><br><br>
+      <%= f.collection_check_boxes :interest_ids, Interest.all, :id, :name do |b| %>
+        <div class="collection-check-box">
+          <%= b.check_box %>
+          <%= b.label %>
+        </div>
+      <% end %>
+      <br><br>
+      <%= f.submit "Register" %>
+    <% end %>
+  </div>
+  <div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary">Save changes</button>
+</div>
