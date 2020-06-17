@@ -1,5 +1,23 @@
-<div class="container my-5 ">
-  <h3 class="my-3 h2 text-info">Your interests</h3>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4">  
+      <div class="card text-secondary shadow-sm" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span class="text-info">Username:</span> <%= @user.username %></li>
+          <li class="list-group-item"><span class="text-info">Name:</span> <%= @user.first_name %> <%= @user.last_name %></li>
+          <li class="list-group-item"><span class="text-info">Age:</span> <%= @user.age %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">  
+      <div class="card-body ">
+        <h5 class="card-title text-info">About Me</h5>
+        <p class="card-text text-secondary"><%= @user.bio %></p>
+      </div>
+    </div>
+  </div>
+  <h3 class="my-4 h2 text-info">Your interests</h3>
   <p class="card-text font-italic font-weight-light text-success">Remember that it's also based on your interests that our searching algorithm will match you with another user.</p>
   <ul class="list-group list-group-horizontal">
     <% @user.user_interests.each do |interest|%>
@@ -26,9 +44,6 @@
                 <p class="font-weight-light">We got you covered. If you accept hanging out with <span class="h6"><%= user.first_name %> <%= user.last_name %></span> we think you both will enjoy:<span class="h6"> <%= hg.activity %> in <%= hg.location.city %></span></p>
                 <a href="#" class="btn btn-outline-danger">Not this time</a>
                 <a href="#" class="btn btn-outline-success">Yes, hangout!</a>
-                <div class="progress my-3">
-                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 40%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
               </div>
             </div>
           </div>
