@@ -11,6 +11,7 @@
         <% if logged_in? %>
           <%= link_to "Profile", user_path(current_user), class: "nav-link text-dark"%>
           <%= link_to "Show Matches", new_user_hangout_path, class: "nav-link text-dark" %> 
+          <%= link_to "Edit profile", edit_user_path(current_user), class: "nav-link text-dark" %> 
           <%= link_to "Logout", logout_path, method: :delete, class: "nav-link text-dark" %>
         <% else %>
           <%= link_to "Home", home_path, class: "nav-link text-dark" %>
