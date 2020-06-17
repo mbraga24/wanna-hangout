@@ -2,7 +2,7 @@
 
 **made with :heart: by** [Marlon Braga](https://github.com/mrdbrg) and [Senada Kadric](https://github.com/senadakadric)
 
-**Wanna Hangout?** is a web application that allows you to match with people based on common interests. Our algorithm filters potential matches based on location and common interests and generates hangouts with activities that users can either reject or accept. Built using Ruby on Rails and Bootstrap.
+**Wanna Hangout?** is a web application that allows you to match with people based on common interests. Our algorithm filters potential matches based on location and common interests, and generates hangouts with activities that users can either reject or accept.
 
 ![homepage](app/assets/images/HomepageScreenshot.png)
 
@@ -12,5 +12,14 @@
 - Bootstrap
 - Active Record
 - BCrypt
+
+## To get the app running on your machine
+
+- Clone this repository onto your local machine
+- In your terminal, run 'bundle install'
+- Run 'rails db:migrate'
+- Run rails db:seed
+- Run 'rails s' and go to localhost:3000
+- Enjoy! Hope you meet someone great :wink:
 
 ### Thank you for visiting :relaxed:
