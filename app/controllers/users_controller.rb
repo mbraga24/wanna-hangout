@@ -8,9 +8,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
+  def new_form
     @age_choice = (18..70).to_a
-    @user = User.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -22,13 +25,13 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
-      render :new
+      render :new_form
     end 
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :city, :age, :bio, interest_ids:[])
+    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :location_id, :age, :bio, interest_ids:[])
   end
 end

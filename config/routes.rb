@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: "pages#home", as: "/home"
+  get "/pages", to: "pages#about", as: "/about"
   
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
@@ -8,6 +9,6 @@ Rails.application.routes.draw do
   resources :locations
   resources :user_hangouts
   resources :hangouts
-  get "/register", to: "users#new"
-  resources :users, except: [:new] 
+  get "users/new_form", to: "users#new_form", :as => :new_form
+  resources :users, except: [:new]
 end
