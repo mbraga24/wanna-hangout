@@ -1,19 +1,18 @@
-<ul>
-    <% current_user.match.each do |user| %>
-      <%= form_for(user) do |f| %> 
-        <%= f.collection_check_boxes do |b| %>
-          <div class="collection-check-box" id="">
-            <li><%= user.find_your_match.username %></li>
-            <li><%= user.find_your_match.age %></li>
-            <li><%= user.find_your_match.city %></li>
-            <%= b.check_box %>
-            <%= b.label %>
-          </div>
-          <hr>
-        <% end %>
+<% if current_user.hangouts.count != 0 %>
+  
+  <h4>Your hangouts</h4>
+  <% current_user.hangouts.each do |hg| %>
+    <% hg.users.each do |user| %>
+      <% if user.id != current_user.id %>
+        <%= user.username %><br>
+        <%= hg.activity %><br>
+        <%= hg.location.city %><br><br>
       <% end %>
     <% end %>
-</ul>
+  <% end %>
+<% else %>
+  <h4>You have no hangouts yet!</h4>
+<% end %>
 
 <ul>
     <% current_user.match.each do |user| %>

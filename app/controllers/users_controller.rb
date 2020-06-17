@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-
     # user.save will save the user if it passes all validations on User model.
     if user.save
       # User will be logedin upon creation,
@@ -30,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-
   end
 
   private

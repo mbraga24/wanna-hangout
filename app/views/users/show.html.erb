@@ -1,24 +1,42 @@
-<h1> Welcome, <%= @user.username %>!</h1>
-<ul>
-  <% @user.user_interests.each do |interest|%>
-    <li> <%= interest %> </li>
-  <% end %>
-</ul>
-<% if current_user.hangouts.count != 0 %>
-  <h4>Your hangouts</h4>
-  <% current_user.hangouts.each do |hg| %>
-    <% hg.users.each do |user| %>
-      <% if user.id != current_user.id %>
-        <%= user.username %><br>
-        <%= hg.activity %><br>
-        <%= hg.location.city %><br><br>
-      <% end %>
+<div class="container my-5 ">
+  <h3 class="my-3 h2 text-info">Your interests</h3>
+  <p class="card-text font-italic font-weight-light text-success">Remember that it's also based on your interests that our searching algorithm will match you with another user.</p>
+  <ul class="list-group list-group-horizontal">
+    <% @user.user_interests.each do |interest|%>
+      <li class="list-group-item text-secondary shadow-sm"><%= interest %></li>
     <% end %>
+  </ul>
+  <div class="dropdown-divider my-5"></div>
+  <div class="row">
+  <% if current_user.hangouts.count != 0 %>
+  <h1 class="display-4 mb-4 mx-3 text-info">Your hangouts</h1>
+  <div class="col-sm-12"></div>
+    <% current_user.hangouts.each do |hg| %>
+      <% hg.users.each do |user| %>
+        <% if user.id != current_user.id %>
+          <div class="col-sm-4">
+            <div class="card bg-light text-dark shadow">
+              <div class="card-body">
+                <h5 class="card-title font-italic h3"><%= user.first_name %> <%= user.last_name %><br></h5>
+                <p>Username: <span class="h6"><%= user.username %></span></p>
+                <div class="dropdown-divider"></div>
+                <p>Know a little bit about <span class="h6"><%= user.first_name %></p>
+                <p class="card-text font-italic font-weight-light"><%= user.bio %>.</p>
+                <div class="dropdown-divider"></div>
+                <p class="font-weight-light">We got you covered. If you accept hanging out with <span class="h6"><%= user.first_name %> <%= user.last_name %></span> we think you both will enjoy:<span class="h6"> <%= hg.activity %> in <%= hg.location.city %></span></p>
+                <a href="#" class="btn btn-outline-danger">Not this time</a>
+                <a href="#" class="btn btn-outline-success">Yes, hangout!</a>
+                <div class="progress my-3">
+                  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 40%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+      <% end %>
+  <% else %>
+    <h1 class="display-4">You have no hangouts yet!</h1>
   <% end %>
-<% else %>
-  <h4>You have no hangouts yet!</h4>
-<% end %>
-<br><br><br>
-
-<%= current_user.hangouts.inspect %>
-<%= current_user.hangouts.count %>
+  </div>
+</div>
