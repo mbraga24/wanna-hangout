@@ -15,10 +15,10 @@
 
 ## To get the app running on your machine
 
-- Clone this repository onto your local machine
-- In your terminal, run 'bundle install'
-- Run 'rails db:migrate'
-- Run rails db:seed
+- Clone this repository onto your local machine with command 'git clone'
+- In your terminal, run 'bundle install' to install all required gems.
+- Run 'rails db:migrate' to create the database.
+- Run 'rails db:seed' to seed the database.
 - Run 'rails s' and go to localhost:3000
 - Enjoy! Hope you meet someone great :wink:
 
