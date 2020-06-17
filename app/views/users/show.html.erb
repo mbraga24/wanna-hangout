@@ -1,5 +1,23 @@
 <div class="container my-5">
-  <h3 class="my-3 h2 text-info">Your interests</h3>
+  <div class="row">
+    <div class="col-md-4">  
+      <div class="card text-secondary shadow-sm" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><span class="text-info">Username:</span> <%= @user.username %></li>
+          <li class="list-group-item"><span class="text-info">Name:</span> <%= @user.first_name %> <%= @user.last_name %></li>
+          <li class="list-group-item"><span class="text-info">Age:</span> <%= @user.age %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8">  
+      <div class="card-body ">
+        <h5 class="card-title text-info">About Me</h5>
+        <p class="card-text text-secondary"><%= @user.bio %></p>
+      </div>
+    </div>
+  </div>
+  <h3 class="my-4 h2 text-info">Your interests</h3>
   <p class="card-text font-italic font-weight-light text-success">Remember that it's also based on your interests that our searching algorithm will match you with another user.</p>
   <ul class="list-group list-group-horizontal">
     <% @user.user_interests.each do |interest|%>
