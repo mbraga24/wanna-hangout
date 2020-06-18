@@ -33,9 +33,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.update(user_params)
-
-    redirect_to user_path(@user)
+    @user = User.find(params[:id])
+    
+    if @user.update(user_params)
+      flash[:success] = "Your account has been updated."
+      redirect_to user_path(@user)
+    end
   end
 
   private
