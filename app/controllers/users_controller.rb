@@ -21,7 +21,6 @@ class UsersController < ApplicationController
     # user.save will save the user if it passes all validations on User model.
     if user.save
       # User will be logedin upon creation
-      flash[:success] = "Welcome, #{user.first_name} #{user.last_name}."
       session[:user_id] = user.id
       redirect_to user_path(user)
     else

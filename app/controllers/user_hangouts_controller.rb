@@ -8,6 +8,7 @@ class UserHangoutsController < ApplicationController
     user = User.find_by(id: params[:user_hangout][:user_id])
     
     if UserHangout.find_by(user_id: user.id) == nil
+      flash[:success] = "Great! You're going on a hangout!"
       set_hangout = Hangout.create(activity: location_type.sample, location_id: user.location_id)
       UserHangout.create(user_id: current_user.id, hangout_id: set_hangout.id)
       UserHangout.create(user_id: user.id, hangout_id: set_hangout.id)
@@ -22,7 +23,7 @@ class UserHangoutsController < ApplicationController
     hang = UserHangout.find_by(user_id: params[:id])
     UserHangout.where(hangout_id: hang.hangout_id).destroy_all
     hang.destroy
-
+    flash[:warning] = "It's okay. We're working on finding you other matches."
     redirect_to user_path(current_user)
   end
 end

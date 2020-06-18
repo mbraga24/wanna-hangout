@@ -11,8 +11,9 @@ class SessionsController < ApplicationController
 
     # if user exists AND the user password is correct we initiae a session 
     # (.authenticate - checks for the correct encoded password from bcrypt)
-    if user && user.authenticate(params[:session][:password])
+    if user && user.authenticate(params[:session][:password])      
       session[:user_id] = user.id
+      flash[:primary] = "Welcome, #{user.first_name} #{user.last_name}. Let's get matching!"
       redirect_to user_path(user)
     else
       # Will keep user (render) on the new view

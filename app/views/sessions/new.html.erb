@@ -4,7 +4,8 @@
     </div>
     <div class="card col-md-3 style="width: 18rem;">
       <%= form_for(:session, url: login_path) do |f| %>
-        <div class="form-group my-5">
+        <h3 class="card-title my-4 mx-3 text-danger font-italic">Let's Match</h3>
+        <div class="form-group">
           <div class="col-md-12 mb-3">
             <%= f.label :username, for: "validationDefault01" %>
             <%= f.text_field :username, class: "form-control", id: "validationDefault01", required: true, autofocus: true %>
@@ -14,7 +15,7 @@
             <%= f.password_field :password, class: "form-control", id: "exampleInputPassword1", required: true %>
           </div>
           <div class="col-md-6 mb-3">
-            <%= f.submit "Login", type: "submit", class: "btn btn-primary" %>
+            <%= f.submit "Login", type: "submit", class: "btn btn-outline-success" %>
           </div>
         </div>
       <% end %>
