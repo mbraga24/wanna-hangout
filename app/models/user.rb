@@ -5,6 +5,20 @@ class User < ApplicationRecord
   has_and_belongs_to_many :interests
   has_secure_password
 
+  # validates :username, presence: true
+  # validates :username, uniqueness: true
+  # validates :first_name, length: { minimum: 2 }
+  # validates :last_name, length: { minimum: 2 }
+  # validates :password, length: { in: 6..20 }
+  # validates :age, numericality: { 
+  #   greater_than_or_equal_to: 18,
+  #   less_than_or_equal_to: 105
+  # }
+  # validates :bio, length: {
+  #   minimum: 5,
+  #   maximum: 300
+  # }
+
   # The user_interests will collect all of the given user interests name.
   def user_interests
     self.interests.map do |interest|
