@@ -9,9 +9,10 @@ class UserHangoutsController < ApplicationController
     
     if UserHangout.find_by(user_id: user.id) == nil
       flash[:success] = "Great! You're going on a hangout!"
-      set_hangout = Hangout.create(activity: location_type.sample, location_id: user.location_id)
+      set_hangout = Hangout.create()
       UserHangout.create(user_id: current_user.id, hangout_id: set_hangout.id)
       UserHangout.create(user_id: user.id, hangout_id: set_hangout.id)
+
 
       redirect_to user_path(current_user)
     else

@@ -49,9 +49,9 @@
                 <p>Know a little bit about <span class="h6"><%= user.first_name %></p>
                 <p class="card-text font-italic font-weight-light"><%= user.bio %>.</p>
                 <div class="dropdown-divider"></div>
-                <p class="font-weight-light">We got you covered. If you accept hanging out with <span class="h6"><%= user.first_name %> <%= user.last_name %></span> we think you both will enjoy:<span class="h6"> <%= hg.activity %> in <%= hg.location.city %></span></p>
+      
                 <%= link_to "Not this time", user_hangout_path, class: "btn btn-outline-danger", method: :delete %>
-                <a href="#" class="btn btn-outline-success">Yes, hangout!</a>
+                <%= link_to "Yes, hangout!", user_hangout_path, class: "btn btn-outline-danger", method: :delete %>
               </div>
             </div>
           </div>
